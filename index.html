@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title >DEMO KOV</title>
+    <% if (htmlWebpackPlugin.files.favicon) { %>
+    <link rel="shortcut icon" type="image/png" href="<%= htmlWebpackPlugin.files.favicon%>">
+    <% } %>
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+    <% if(htmlWebpackPlugin.files.chunks['manifest']){ %>
+    <script src="<%= htmlWebpackPlugin.files.chunks['manifest'].entry %>" type="text/javascript"></script>
+    <% }%>
+
+</head>
+<body>
+
+<div class="content " data-bind='component: {name:componentName, params: params}'></div>
+
+<script>
+
+</script>
+
+<script src="<%= htmlWebpackPlugin.files.chunks['vendor'].entry %>" type="text/javascript"></script>
+<script src="<%= htmlWebpackPlugin.files.chunks['app'].entry %>" type="text/javascript"></script>
+
+
+</body>
+</html>

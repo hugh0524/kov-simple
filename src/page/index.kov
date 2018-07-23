@@ -1,0 +1,18 @@
+<template>
+  <div>
+     this is a index page
+  </div>
+</template>
+<script>
+    define([], function() {
+        
+        return {
+            viewModel: function() {
+                
+            }
+        }
+    })
+</script>
+<style>
+
+</style>
