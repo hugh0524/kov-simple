@@ -1,15 +1,27 @@
 <template>
   <div>
      this is a index page
+      <div data-bind="html: isTestable"></div>
   </div>
 </template>
 <script>
     define([], function() {
-        
-        return {
-            viewModel: function() {
-                
+
+        function testable(isTestable) {
+            return function(target) {
+                target.prototype.isTestable = isTestable;
             }
+        }
+
+        @testable(true)
+        class Index {
+            constructor(){
+
+            }
+        }
+
+        return {
+            viewModel: Index
         }
     })
 </script>
